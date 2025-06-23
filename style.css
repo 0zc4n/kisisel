@@ -1,17 +1,23 @@
+/* Genel Ayarlar */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
   margin: 0;
   padding: 0;
-   font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
   background-color: #0077cc;
   color: white;
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section {
@@ -20,11 +26,13 @@ section {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2 {
   margin-top: 0;
 }
+
 .main-nav {
   text-align: center;
   margin: 20px 0;
@@ -39,6 +47,7 @@ h1, h2 {
   color: #333;
   font-weight: bold;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
@@ -58,72 +67,29 @@ h1, h2 {
   height: 150px;
   border-radius: 50%;
   margin-top: 20px;
+  object-fit: cover;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background-color: #ffffff;
-  color: #0077cc;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #eeeeee;
-}
-
-.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode header {
-  background-color: #1e1e1e;
-}
-
-.dark-mode section {
-  background-color: #242424;
-  box-shadow: none;
-  transition: background-color 0.3s ease;
-}
-
-.dark-mode button {
-  background-color: #333;
-  color: #f0f0f0;
-  border: 1px solid #555;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  gap: 10px;
-}
-
+/* Butonlar */
 button {
   padding: 12px 25px;
   font-size: 16px;
   border: none;
+  background-color: #0077cc;
+  color: white;
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-button:hover {
-  background-color: #555;
-  color: #fff;
-}
-body, header, section, button {
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px;
 }
 
+button:hover {
+  background-color: #005fa3;
+  color: #fff;
+}
+
+/* Tema Değiştir Butonu */
 #temaButonu {
   position: fixed;
   top: 15px;
@@ -142,6 +108,7 @@ body, header, section, button {
   color: #0077cc;
 }
 
+/* Form Stilleri */
 form {
   max-width: 500px;
   margin: 20px auto;
@@ -158,26 +125,17 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
-button {
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #005fa3;
-}
-
+/* Form Gönderim Durum Mesajı */
 #status {
   text-align: center;
   margin-top: 15px;
   font-weight: bold;
 }
+
+/* Proje Kartları */
 .projects {
   display: flex;
   flex-direction: column;
@@ -192,7 +150,7 @@ button:hover {
   border-radius: 8px;
   padding: 15px;
   background-color: #f2f2f2;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -209,8 +167,14 @@ button:hover {
   margin-top: 10px;
   color: #0077cc;
   text-decoration: none;
+  transition: text-decoration 0.3s ease;
 }
 
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Geri Dön Butonu */
 .back-button {
   text-align: center;
   margin: 30px 0;
@@ -224,13 +188,35 @@ button:hover {
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .back-button button:hover {
   background-color: #005fa3;
 }
 
+/* Karanlık Mod */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
 
+.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+.dark-mode section {
+  background-color: #242424;
+  box-shadow: none;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   header {
     padding: 20px 10px;
@@ -240,14 +226,15 @@ button:hover {
     margin: 10px 5px;
     padding: 15px;
   }
+
   .profil {
     width: 100px;
     height: 100px;
   }
+
   #temaButonu {
     top: 10px;
     right: 10px;
     font-size: 24px;
   }
 }
-

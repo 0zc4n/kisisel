@@ -4,14 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>İletişim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>İletişim</h1>
-  </header>
 
-  <section>
+  <!-- Menü -->
+  <nav class="main-nav">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="projects.html">Projeler</a>
+    <a href="contact.html">İletişim</a>
+  </nav>
+
+  <!-- Başlık -->
+  <h1 class="page-title">İletişim</h1>
+
+  <!-- Form Bölümü -->
+  <section class="contact-section">
     <form id="contactForm">
       <label for="name">Adınız:</label><br />
       <input type="text" id="name" name="name" required /><br /><br />
@@ -28,6 +37,12 @@
     <p id="status"></p>
   </section>
 
+  <!-- Geri Dön Butonu -->
+  <div class="back-button">
+    <button onclick="history.back()">← Geri Dön</button>
+  </div>
+
+  <!-- JavaScript -->
   <script>
     const form = document.getElementById("contactForm");
     const status = document.getElementById("status");
@@ -35,7 +50,6 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // Basit doğrulama
       if (
         form.name.value.trim() === "" ||
         form.email.value.trim() === "" ||
@@ -46,13 +60,11 @@
         return;
       }
 
-      // Burada gerçek mesaj gönderme API'si yok,
-      // o yüzden sadece başarılı mesajı gösteriyoruz.
-      status.textContent = "Mesajınız başarıyla gönderildi! Teşekkürler.";
+      status.textContent = "Mesajınız başarıyla gönderildi!";
       status.style.color = "green";
-
       form.reset();
     });
   </script>
+
 </body>
 </html>
