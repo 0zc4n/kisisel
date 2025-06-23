@@ -7,14 +7,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Projelerim</h1>
-    <nav>
-      <a href="index.html">Ana Sayfa</a> |
-      <a href="contact.html">İletişim</a> |
-      <a href="projects.html">Projeler</a>
-    </nav>
-  </header>
+  <nav class="main-nav">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="projects.html">Projeler</a>
+    <a href="contact.html">İletişim</a>
+  </nav>
+
+  <h1 class="page-title">Projelerim</h1>
 
   <section class="projects">
     <div class="project-card">
@@ -29,5 +28,9 @@
       <a href="#">Demo yakında</a>
     </div>
   </section>
+
+  <div class="back-button">
+    <button onclick="history.back()">← Geri Dön</button>
+  </div>
 </body>
 </html>
